@@ -9,8 +9,8 @@
 #include <iostream>
 #include <stdlib.h>
 
-#include "exampleConfig.h"
 #include "example.h"
+#include "exampleConfig.h"
 
 /*
  * Simple main program that demontrates how access
