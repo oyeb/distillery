@@ -17,25 +17,3 @@ jobs:
       run: cmake --build build
     - name: test
       run: cd build && ctest
-
-
-  build-windows:
-
-    runs-on: windows-latest
-    
-    steps:
-    - uses: actions/checkout@v2
-      with:
-          submodules: true
-    - name: configure
-      run: |
-        mkdir build
-        cd build
-        cmake ..
-    - name: build
-      run: cmake --build build
-    - name: test
-      run: |
-        cd build
-        set CTEST_OUTPUT_ON_FAILURE=1
-        ctest -C Debug 
