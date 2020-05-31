@@ -3,9 +3,9 @@
 /**
  * This is a dummy class to demonstrate features of the boiler plate.
  */
-class Dummy {
-	public:
-
+class Dummy
+{
+public:
   /**
    * Default constructor for Dummy (does nothing).
    */
@@ -22,7 +22,7 @@ class Dummy {
 #include "doctest.h"
 TEST_CASE("we can have tests in headers if we want")
 {
-    Dummy d;
-    CHECK(d.doSomething() == true);
+  Dummy d;
+  CHECK(d.doSomething() == true);
 }
 #endif

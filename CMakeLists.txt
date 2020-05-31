@@ -22,6 +22,7 @@ option(ENABLE_DOCTESTS "Include tests in the library. Setting this to OFF will r
 
 # Include stuff. No change needed.
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
+include(CPM)
 include(ConfigSafeGuards)
 include(Colors)
 include(CTest)
@@ -29,6 +30,7 @@ include(Doctest)
 include(Documentation)
 include(LTO)
 include(Misc)
+include(StaticAnalyzer)
 include(Warnings)
 
 # Check for LTO support.
@@ -43,7 +45,7 @@ set(SOURCES          # All .cpp files in src/
 set(TESTFILES        # All .cpp files in tests/
     tests/main.cpp
 )
-set(LIBRARY_NAME engine)  # Default name for the library built from src/*.cpp (change if you wish)
+set(LIBRARY_NAME distillery)  # Default name for the library built from src/*.cpp (change if you wish)
 
 # --------------------------------------------------------------------------------
 #                            Build! (Change as needed)
@@ -79,3 +81,4 @@ set_target_properties(
 
 # Set up tests (see tests/CMakeLists.txt).
 add_subdirectory(tests)
+

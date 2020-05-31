@@ -13,6 +13,8 @@ jobs:
           submodules: true
     - name: configure
       run: mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=debug ..
+    - name: format
+      run: cmake --build build --target check-format
     - name: build
       run: cmake --build build
     - name: test
