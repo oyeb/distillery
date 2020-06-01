@@ -1,4 +1,6 @@
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+[![license](https://img.shields.io/badge/license-Unlicense-blue.svg)](https://github.com/oyeb/distillery/blob/master/LICENSE)
+[![Lines of Code](https://tokei.rs/b1/github/oyeb/distillery)](https://github.com/Aaronepower/tokei)
 <!--
 [![Build Status](https://travis-ci.org/bsamseth/cpp-project.svg?branch=master)](https://travis-ci.org/bsamseth/cpp-project)
 [![Build status](https://ci.appveyor.com/api/projects/status/g9bh9kjl6ocvsvse/branch/master?svg=true)](https://ci.appveyor.com/project/bsamseth/cpp-project/branch/master)
@@ -10,8 +12,6 @@
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/bsamseth/cpp-project.svg)](http://isitmaintained.com/project/bsamseth/cpp-project "Average time to resolve an issue")
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/bsamseth/cpp-project.svg)](http://isitmaintained.com/project/bsamseth/cpp-project "Percentage of issues still open")
 -->
-[![license](https://img.shields.io/badge/license-Unlicense-blue.svg)](https://github.com/oyeb/distillery/blob/master/LICENSE)
-[![Lines of Code](https://tokei.rs/b1/github/oyeb/distillery)](https://github.com/Aaronepower/tokei)
 
 # Distillery
 
@@ -20,7 +20,8 @@ control flow graphs and concrete analyses.
 
 ## Building
 
-Build by making a build directory (i.e. `build/`), run `cmake` in that dir, and then use `make` to build the desired target.
+Build by making a build directory (i.e. `build/`), run `cmake` in that dir, and
+then use `make` to build the desired target.
 
 Example:
 
@@ -33,3 +34,6 @@ Example:
 > make coverage  # Generate a coverage report.
 > make doc       # Generate html documentation.
 ```
+
+## Attribution
+Many thanks to this [starter template](https://github.com/bsamseth/cpp-project)!
