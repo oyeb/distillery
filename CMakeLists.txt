@@ -30,7 +30,9 @@ include(Doctest)
 include(Documentation)
 include(LTO)
 include(Misc)
-include(StaticAnalyzer)
+if (NOT DEFINED $ENV{CI})
+  include(StaticAnalyzer)
+endif()
 include(Warnings)
 
 # Check for LTO support.
