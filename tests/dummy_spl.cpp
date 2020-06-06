@@ -7,8 +7,8 @@ using Statement = DummyStatement;
 using Block = DummyBlock;
 
 template<>
-distillery::StatementInterface<DummyGraphSpecialization>::StatementInterface(const Statement *stmt)
-  : stmt(stmt) {}
+distillery::StatementInterface<DummyGraphSpecialization>::StatementInterface(const Statement *stmt1)
+  : stmt(stmt1) {}
 
 template<>
 distillery::BlockInterface<DummyGraphSpecialization>::BlockInterface(const Block *block)
