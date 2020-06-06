@@ -4,11 +4,11 @@
 // Tests that don't naturally fit in the headers/.cpp files directly
 // can be placed in a tests/*.cpp file. Integration tests are a good example.
 
-DummyStatement::DummyStatement(unsigned id, std::string statement) : id(id),
-                                                                     statement(statement)
+DummyStatement::DummyStatement(unsigned id1, std::string statement1) : id(id1),
+                                                                     statement(statement1)
 {}
 
-DummyBlock::DummyBlock(unsigned id) : id(id)
+DummyBlock::DummyBlock(unsigned id1) : id(id1)
 {
   statements.emplace_back(id, std::to_string(id));
 }
@@ -26,7 +26,7 @@ DummyGraph::DummyGraph()
    *            2 --------> 4
    *                  3 --> 4
    */
-  for (int idx = 0; idx < 5; idx++) {
+  for (size_t idx = 0; idx < 5; idx++) {
     blocks.emplace_back(idx);
     if (idx > 0)
       blocks[idx - 1].push_successor(&blocks[idx]);
