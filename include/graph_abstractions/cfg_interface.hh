@@ -110,13 +110,13 @@ public:
       if (deleted_nodes.find(block.get()) != deleted_nodes.end()) continue;
       if (reachable.find(block.get()) == reachable.end()) continue;
 
-      auto successor_count = [](const BlockInterface<GraphType> *block) -> unsigned {
-        return block->successors().size();
+      auto successor_count = [](const BlockInterface<GraphType> *block_ptr) -> unsigned {
+        return block_ptr->successors().size();
       };
 
-      auto predecessor_count = [&reachable](const BlockInterface<GraphType> *block) -> unsigned {
+      auto predecessor_count = [&reachable](const BlockInterface<GraphType> *block_ptr) -> unsigned {
         unsigned result{ 0 };
-        for (auto *pred : block->predecessors()) {
+        for (auto *pred : block_ptr->predecessors()) {
           if (reachable.find(pred) != reachable.end()) {
             result++;
           }
