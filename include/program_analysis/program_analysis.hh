@@ -1,6 +1,8 @@
 #ifndef DISTILLERY_PROGRAM_ANALYSIS_HH
 #define DISTILLERY_PROGRAM_ANALYSIS_HH
 
+#include <pre-compiled-header.hh>
+
 #include <map>
 #include <memory>
 
