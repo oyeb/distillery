@@ -23,35 +23,35 @@
 
 namespace distillery
 {
-    /**
-     * @brief 
-     * 
-     */
-    class Manager
-    {
-    private:
-        Logger m_profiler_logger;
+	/**
+	 * @brief 
+	 * 
+	 */
+	class Manager
+	{
+	private:
+		Logger m_profiler_logger;
 
-        Logger m_logger;
+		Logger m_logger;
 
-        Profiler m_manager_profiler;
+		Profiler m_manager_profiler;
 
-        PassManager m_pass_manager;
+		PassManager m_pass_manager;
 
-        static std::unique_ptr<Manager> m_instance;
-    public:
+		static std::unique_ptr<Manager> m_instance;
+	public:
 
-        Manager();
+		Manager();
 
-        Logger& get_profiler_logger();
+		Logger& get_profiler_logger();
 
-        Logger& get_logger();
+		Logger& get_logger();
 
-        PassManager& get_pass_manager();
+		PassManager& get_pass_manager();
 
-        static Manager& get_instance();
-    };
-    
+		static Manager& get_instance();
+	};
+	
 } // namespace distillery::managers
 
 #define TV_RTL_MANAGER tv_rtl::Manager::get_instance()

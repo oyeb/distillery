@@ -10,9 +10,9 @@
 
 namespace distillery {
 	struct RtlSpecialization {
-	    using Cfg = ::function;
-	    using Block = basic_block;
-	    using Statement = rtx;
+		using Cfg = ::function;
+		using Block = basic_block;
+		using Statement = rtx;
 	};
 }
 
