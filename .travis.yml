@@ -31,7 +31,7 @@ matrix:
             - g++-4.9
 
       env:
-        - MATRIX_EVAL="CXX_COMPILER=g++-4.9"
+        - MATRIX_EVAL="CXX_COMPILER=g++-4.9; sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-4.9 90"
 
     - os: linux
       compiler: clang
@@ -53,8 +53,10 @@ before_install:
   - sudo sh cmake.sh --skip-license --exclude-subdir --prefix=/usr/local
   - export PATH=/usr/local/bin:$PATH
   - cmake --version
-
-
+  - g++ --version
+  - clang++ --version
+  - gcov --version
+  
 install:
   - cd $PARENTDIR/build
   - cmake $PARENTDIR -DCMAKE_BUILD_TYPE=Coverage -DCMAKE_CXX_COMPILER=$CXX_COMPILER -DCPM_SOURCE_CACHE=$HOME/cpm
