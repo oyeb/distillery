@@ -27,6 +27,7 @@ distillery::CfgInterface<DummyGraphSpecialization>::CfgInterface(DummyGraph &gra
     blocks.back()->set_block_id(block.id);
     corresponding_interface[block.id] = blocks.back().get();
   }
+
   for (const auto &block : graph.blocks) {
     for (const auto &successor : block.successors) {
       corresponding_interface[block.id]->add_successor(corresponding_interface[successor->id]);
@@ -43,7 +44,7 @@ TEST_CASE("dummy graph traversable using interface")
   DummyGraph dg;
   distillery::CfgInterface<DummyGraphSpecialization> dummy(dg);
 
-  for (const auto &block : dummy)
+  for (const auto &block : dummy) {
     switch (block->block_id()) {
     case 0:
       CHECK(block->to_string() == "{} -> [0] -> {1,}");
@@ -63,4 +64,5 @@ TEST_CASE("dummy graph traversable using interface")
     default:
       break;
     }
+  }
 }
