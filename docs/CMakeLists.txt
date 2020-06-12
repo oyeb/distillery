@@ -3,7 +3,7 @@
 # --------------------------------------------------------------------------------
 # Add a make target 'doc' to generate API documentation with Doxygen.
 # You should set options to your liking in the file 'Doxyfile.in'.
-find_package(Doxygen REQUIRED)
+find_package(Doxygen)
 
 # Find all the public headers
 get_target_property(DISTILLERY_PUBLIC_HEADER_DIR distillery INTERFACE_INCLUDE_DIRECTORIES)
@@ -28,7 +28,7 @@ add_custom_command(
 
 add_custom_target(Doxygen ALL DEPENDS ${DOXYGEN_INDEX_FILE})
 
-find_package(Sphinx REQUIRED)
+find_package(Sphinx)
 set(SPHINX_SOURCE ${CMAKE_CURRENT_SOURCE_DIR})
 set(SPHINX_BUILD ${CMAKE_CURRENT_BINARY_DIR}/sphinx)
 set(SPHINX_INDEX_FILE ${SPHINX_BUILD}/index.html)

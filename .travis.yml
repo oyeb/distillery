@@ -15,11 +15,10 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - lcov
-            - doxygen
             - g++-7
 
       env:
-        - MATRIX_EVAL="CXX_COMPILER=g++-7; BUILD_TYPE=Coverage; GEN_DOC=TRUE; sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-7 90"
+        - MATRIX_EVAL="CXX_COMPILER=g++-7; BUILD_TYPE=Coverage; sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-7 90"
 
     - os: linux
       compiler: gcc
@@ -68,13 +67,9 @@ before_install:
 install:
   - cd $PARENTDIR/build
   - cmake $PARENTDIR -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DCMAKE_CXX_COMPILER=$CXX_COMPILER -DCPM_SOURCE_CACHE=$HOME/cpm
-  - make -j4
+  - make distillery unit_tests -j4
 
 script:
-  - |
-    if [[ "$GEN_DOC" == "TRUE" ]]; then
-      cmake --build . --target doc
-    fi
   - |
     if [[ "$BUILD_TYPE" == "Coverage" ]]; then
       make coverage
@@ -90,13 +85,3 @@ after_success:
       bash <(curl -s https://codecov.io/bash) -f coverage_out.info.cleaned || echo "Codecov did not collect coverage reports"
       #bash <(curl -s https://codecov.io/bash) -X gcov || echo "Codecov did not collect coverage reports"
     fi
-deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN #You will need to add your (ENCRYPTED if set in the .travis.yml) GH token as environment variable of your project
-  keep-history: true
-  on:
-    branch: master
-    condition: $GEN_DOC = TRUE
-  local-dir: build/html
-  
