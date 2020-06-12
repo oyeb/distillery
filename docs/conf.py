@@ -34,6 +34,7 @@ if read_the_docs_build:
   configureDoxyfile(input_dir, output_dir)
   subprocess.call('doxygen', shell=True)
 
+
 # -- Project information -----------------------------------------------------
 
 project = 'Distillery'

@@ -86,4 +86,3 @@ add_subdirectory(tests)
 
 # Set up reST documentation pages
 add_subdirectory(docs)
-
