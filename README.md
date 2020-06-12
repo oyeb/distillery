@@ -2,7 +2,8 @@
 [![license](https://img.shields.io/badge/license-Unlicense-blue.svg)](https://github.com/oyeb/distillery/blob/master/LICENSE)
 [![Build Status](https://travis-ci.com/oyeb/distillery.svg?branch=master)](https://travis-ci.com/oyeb/distillery)
 [![codecov](https://codecov.io/gh/oyeb/distillery/branch/master/graph/badge.svg)](https://codecov.io/gh/oyeb/distillery)
-[![Documentation](https://img.shields.io/badge/Documentation-latest-blue.svg)](https://oyeb.github.io/distillery)
+[![Documentation Status](https://readthedocs.org/projects/distillery/badge/?version=latest)](https://distillery.readthedocs.io/en/latest/?badge=latest)
+
 <!--
 [![Lines of Code](https://tokei.rs/b1/github/oyeb/distillery)](https://github.com/Aaronepower/tokei)
 [![Build status](https://ci.appveyor.com/api/projects/status/g9bh9kjl6ocvsvse/branch/master?svg=true)](https://ci.appveyor.com/project/bsamseth/cpp-project/branch/master)
