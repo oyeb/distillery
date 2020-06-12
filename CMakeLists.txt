@@ -27,7 +27,7 @@ include(ConfigSafeGuards)
 include(Colors)
 include(CTest)
 include(Doctest)
-include(Documentation)
+include(FindSphinx)
 include(LTO)
 include(Misc)
 if (NOT DEFINED $ENV{CI})
@@ -83,4 +83,7 @@ set_target_properties(
 
 # Set up tests (see tests/CMakeLists.txt).
 add_subdirectory(tests)
+
+# Set up reST documentation pages
+add_subdirectory(docs)
 
