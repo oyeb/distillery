@@ -10,10 +10,29 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+import os
+import subprocess
+def configureDoxyfile(input_dir, output_dir):
+  with open('Doxyfile.in', 'r') as file :
+    filedata = file.read()
+    
+  filedata = filedata.replace('@DOXYGEN_INPUT_DIR@', input_dir)
+  filedata = filedata.replace('@DOXYGEN_OUTPUT_DIR@', output_dir)
+    
+  with open('Doxyfile', 'w') as file:
+    file.write(filedata)
+
+# Check if we're running on Read the Docs' servers
+read_the_docs_build = os.environ.get('READTHEDOCS', None) == 'True'
+
+if read_the_docs_build:
+  input_dir = '../'
+  output_dir = 'build'
+  configureDoxyfile(input_dir, output_dir)
+  subprocess.call('doxygen', shell=True)
 
 # -- Project information -----------------------------------------------------
 

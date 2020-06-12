@@ -32,6 +32,9 @@
 *.app
 *.x
 
+# Local environment
+.envrc
+
 # Build directory
 build/
 external/doctest/
