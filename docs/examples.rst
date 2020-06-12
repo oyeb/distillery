@@ -1,0 +1,6 @@
+========
+Examples
+========
+
+.. doxygenclass:: Dummy
+   :members:
