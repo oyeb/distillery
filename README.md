@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.com/oyeb/distillery.svg?branch=master)](https://travis-ci.com/oyeb/distillery)
 [![codecov](https://codecov.io/gh/oyeb/distillery/branch/master/graph/badge.svg)](https://codecov.io/gh/oyeb/distillery)
 [![Documentation Status](https://readthedocs.org/projects/distillery/badge/?version=latest)](https://distillery.readthedocs.io/en/latest/?badge=latest)
+[![Codacy](https://app.codacy.com/project/badge/Grade/4923fd0e90df439cad54aebe40e55a9b)](https://www.codacy.com/manual/oyeb/distillery?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=oyeb/distillery&amp;utm_campaign=Badge_Grade)
 
 <!--
 [![Lines of Code](https://tokei.rs/b1/github/oyeb/distillery)](https://github.com/Aaronepower/tokei)
